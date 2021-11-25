@@ -1,0 +1,39 @@
+basePath: /
+host: 127.0.0.1:8080
+info:
+  contact:
+    name: zhangyan
+    url: http://www.liwenzhou.com
+  description: 这是一个练手的帖子管理交互系统
+  title: bluebell项目接口文档
+  version: "1.0"
+paths:
+  /signup:
+    get:
+      consumes:
+      - application/json
+      description: 提供用户注册的接口
+      parameters:
+      - in: query
+        name: password
+        required: true
+        type: string
+      - in: query
+        name: re_password
+        required: true
+        type: string
+      - in: query
+        name: username
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: ""
+      security:
+      - ApiKeyAuth: []
+      summary: 用户注册接口
+      tags:
+      - 用户相关接口
+swagger: "2.0"
